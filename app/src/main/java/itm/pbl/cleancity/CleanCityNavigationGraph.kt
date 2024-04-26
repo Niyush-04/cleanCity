@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import itm.pbl.cleancity.presentation.AddPost
 import itm.pbl.cleancity.presentation.MoralityScreen
 import itm.pbl.cleancity.presentation.PollsScreen
 import itm.pbl.cleancity.presentation.SettingScreen
@@ -34,6 +35,9 @@ fun CleanCityNavigationGraph(navController: NavHostController) {
         }
         composable(route = Screens.setting.route) {
             SettingScreen()
+        }
+        composable("ADDPOST"){
+            AddPost()
         }
     }
 }

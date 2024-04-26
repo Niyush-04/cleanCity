@@ -3,7 +3,6 @@ package itm.pbl.cleancity.presentation
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,12 +15,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.MyLocation
-import androidx.compose.material.icons.rounded.ThumbDown
-import androidx.compose.material.icons.rounded.ThumbUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +26,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
@@ -132,41 +127,6 @@ fun CardItem(key: String) {
                 modifier = Modifier.alpha(0.5f),
                 imageVector = Icons.Rounded.MyLocation, contentDescription = "location icon")
             Text(text = location, modifier = Modifier.padding(start = 10.dp))
-        }
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(60.dp)
-                .padding(bottom = 5.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceEvenly
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                LinearProgressIndicator(
-                    progress = 0.7f,
-                    color = GreenLightWala,
-                    )
-                Icon(
-                    modifier = Modifier.alpha(0.5f),
-                    imageVector = Icons.Rounded.ThumbUp, contentDescription = null)
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                LinearProgressIndicator(
-                    progress = 0.7f,
-                    color = GreenLightWala,
-                    )
-                Icon(
-                    modifier = Modifier.alpha(0.5f),
-                    imageVector = Icons.Rounded.ThumbDown, contentDescription = null)
-            }
         }
     }
 }

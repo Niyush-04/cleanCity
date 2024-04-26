@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.rounded.AddCircleOutline
 import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -39,7 +40,6 @@ import itm.pbl.cleancity.ui.theme.CleanCityTheme
 import itm.pbl.cleancity.ui.theme.GreenLightWala
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3Api::class)
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     Scaffold(
                         topBar = {
-                            TopAppBar()
+                            TopAppBar(navController = navController)
                         },
                         bottomBar = {
                             BottomBar(navController = navController)
@@ -112,7 +112,7 @@ fun BottomBar(navController: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBar() {
+fun TopAppBar(navController: NavController) {
     TopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(GreenLightWala),
         title = {
@@ -128,12 +128,16 @@ fun TopAppBar() {
             )
         },
         actions = {
-            IconButton(onClick = {}) {
-                Image(
-                    painter = painterResource(R.drawable.autumn),
-                    contentDescription = "",
+            IconButton(onClick = {
+                navController.navigate("ADDPOST")
+
+            }) {
+                Icon(
+                    imageVector = Icons.Rounded.AddCircleOutline,
+                    contentDescription = "add post",
                     Modifier.size(30.dp)
                 )
+
             }
             IconButton(onClick = {}) {
                 Icon(
@@ -147,7 +151,8 @@ fun TopAppBar() {
                 Image(
                     painter = painterResource(R.drawable.neeraj),
                     contentDescription = "profile",
-                    Modifier.size(30.dp)
+                    Modifier
+                        .size(30.dp)
                         .clip(CircleShape)
                 )
             }
