@@ -110,6 +110,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
     implementation(libs.coil.compose)
+
+    // material icon
+    implementation(libs.androidx.material.icons.extended.android)
 }
 
 kapt {
