@@ -32,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -113,7 +114,7 @@ fun CardItem(key: String) {
     ) {
         Image(
             modifier = Modifier
-                .height(250.dp)
+                .height(200.dp)
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp, top = 20.dp, bottom = 10.dp)
                 .clip(RoundedCornerShape(10.dp)),
@@ -127,13 +128,16 @@ fun CardItem(key: String) {
                 .fillMaxWidth()
                 .padding(start = 10.dp, bottom = 10.dp)
         ) {
-            Icon(imageVector = Icons.Rounded.MyLocation, contentDescription = "location icon")
+            Icon(
+                modifier = Modifier.alpha(0.5f),
+                imageVector = Icons.Rounded.MyLocation, contentDescription = "location icon")
             Text(text = location, modifier = Modifier.padding(start = 10.dp))
         }
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(50.dp),
+                .height(60.dp)
+                .padding(bottom = 5.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
@@ -145,9 +149,10 @@ fun CardItem(key: String) {
                 LinearProgressIndicator(
                     progress = 0.7f,
                     color = GreenLightWala,
-
                     )
-                Icon(imageVector = Icons.Rounded.ThumbUp, contentDescription = null)
+                Icon(
+                    modifier = Modifier.alpha(0.5f),
+                    imageVector = Icons.Rounded.ThumbUp, contentDescription = null)
             }
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -157,9 +162,10 @@ fun CardItem(key: String) {
                 LinearProgressIndicator(
                     progress = 0.7f,
                     color = GreenLightWala,
-
                     )
-                Icon(imageVector = Icons.Rounded.ThumbDown, contentDescription = null)
+                Icon(
+                    modifier = Modifier.alpha(0.5f),
+                    imageVector = Icons.Rounded.ThumbDown, contentDescription = null)
             }
         }
     }
