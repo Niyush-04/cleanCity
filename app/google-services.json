@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "761324410587",
-    "project_id": "clean-city-fb015",
-    "storage_bucket": "clean-city-fb015.appspot.com"
+    "project_number": "438556170114",
+    "project_id": "clean-city-bf73a",
+    "storage_bucket": "clean-city-bf73a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:761324410587:android:aa16ca038980da98781efe",
+        "mobilesdk_app_id": "1:438556170114:android:4ccb60e3a606431ac7a19b",
         "android_client_info": {
           "package_name": "itm.pbl.cleancity"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyArZJNstamDK6Jpal4TLSTkNWBgAs9kSgY"
+          "current_key": "AIzaSyBKDEzJIPa_C60H6AKMOBAZYEZKd7aSA28"
         }
       ],
       "services": {
