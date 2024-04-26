@@ -57,6 +57,7 @@ fun VilenessScreen() {
     }
 }
 
+
 @Composable
 fun HeroSectionCard (data: HeroStorage) {
     Card (

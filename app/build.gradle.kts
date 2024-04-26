@@ -81,6 +81,9 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.51")
     kapt("com.google.dagger:hilt-android-compiler:2.51")
 
+    //material icon
+    implementation(libs.androidx.material.icons.extended.android)
+
 }
 
 kapt {
