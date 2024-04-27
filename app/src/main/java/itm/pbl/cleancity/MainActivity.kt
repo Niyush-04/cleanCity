@@ -10,9 +10,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.rounded.AddCircleOutline
 import androidx.compose.material.icons.rounded.Menu
+import androidx.compose.material3.Badge
+import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -139,14 +141,17 @@ fun TopAppBar(navController: NavController) {
                 )
 
             }
-            IconButton(onClick = {}) {
-                Icon(
-                    Icons.Filled.Notifications,
-                    contentDescription = "notification",
-                    Modifier.size(30.dp)
 
+
+            BadgedBox(
+                modifier = Modifier.padding(start = 8.dp, end = 8.dp),
+                badge = { Badge { Text("4") } }) {
+                Icon(
+                    Icons.Outlined.Notifications,
+                    contentDescription = "Favorite"
                 )
             }
+
             IconButton(onClick = {}) {
                 Image(
                     painter = painterResource(R.drawable.neeraj),
